@@ -1,0 +1,26 @@
+version: '3.5'
+
+services:
+
+  db:
+    image: postgres:11.1-alpine
+    container_name: postgres_auth
+    env_file:
+      - variables.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile-prod
+    container_name: backend_auth
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

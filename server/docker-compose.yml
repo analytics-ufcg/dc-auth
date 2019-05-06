@@ -1,0 +1,30 @@
+version: '3.5'
+
+services:
+
+  db:
+    image: postgres:11.1-alpine
+    container_name: postgres_auth
+    env_file:
+      - variables.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+
+  backend:
+    build: .
+    container_name: backend_auth
+    env_file:
+      - variables.env
+    volumes:
+      - ./routes:/app/routes
+      - ./config:/app/config
+      - ./utils:/app/utils
+      - ./models:/app/models
+      - ./server.js:/app/server.js
+    ports:
+      - "5000:5000"
+
+volumes:
+  postgres_data:
