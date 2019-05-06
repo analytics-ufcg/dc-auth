@@ -1,32 +1,30 @@
 {
-  "name": "voz-ativa",
-  "version": "1.0.0",
-  "description": "Compatibilidade entre eleitor e os candidatos a Deputado Federal com base na Agenda Brasil Sustentável",
+  "name": "dado-capital-auth",
+  "version": "0.1.0",
+  "description": "",
   "main": "server.js",
   "scripts": {
-    "client-install": "npm install --prefix client",
+    "client-install": "yarn install --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "client": "yarn start --prefix client",
+    "dev": "concurrently \"yarn run server\" \"yarn run client\"",
     "docs": "documentation build 'server.js' -f html -o docs",
     "test": "mocha tests"
   },
   "engines": {
-    "node": "10.15.1",
-    "npm": "6.4.1"
+    "node": "8.11.2",
+    "yarn": "^1.13.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/analytics-ufcg/voz-ativa.git"
+    "url": "git+https://github.com/analytics-ufcg/dc-auth.git"
   },
   "author": "Analytics UFCG",
-  "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/analytics-ufcg/voz-ativa/issues"
+    "url": "https://github.com/analytics-ufcg/dc-auth"
   },
-  "homepage": "https://github.com/analytics-ufcg/voz-ativa#readme",
+  "homepage": "https://github.com/analytics-ufcg/dc-auth",
   "dependencies": {
     "@webassemblyjs/helper-wasm-section": "^1.8.0",
     "@webassemblyjs/wasm-opt": "^1.8.0",
@@ -43,7 +41,6 @@
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.2.10",
     "mysql2": "^1.6.4",
-    "npm": "^6.4.1",
     "passport": "^0.4.0",
     "passport-facebook-token": "^3.3.0",
     "passport-google-token": "^0.1.2",
