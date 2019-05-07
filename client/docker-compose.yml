@@ -6,15 +6,13 @@ version: '3.5'
 
 services:
   frontend:
-    build:
-      context: ${FRONTEND_PATH:-.}
-      dockerfile: ./Dockerfile
-    image:  dc-auth/frontend-auth-dev
+    build: .
     container_name: frontend_auth_dev
-    tty: true
+    env_file:
+      - .env
     volumes:
-      - ${FRONTEND_PATH:-.}/src:/app/src
-      - ${FRONTEND_PATH:-.}/public:/app/public
+      - ./src:/app/src
+      - ./public:/app/public
     ports:
       - "8080:8080"
 
