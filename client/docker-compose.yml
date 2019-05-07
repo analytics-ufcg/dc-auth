@@ -8,8 +8,6 @@ services:
   frontend:
     build: .
     container_name: frontend_auth_dev
-    env_file:
-      - .env
     volumes:
       - ./src:/app/src
       - ./public:/app/public
