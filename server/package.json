@@ -12,10 +12,6 @@
     "docs": "documentation build 'server.js' -f html -o docs",
     "test": "mocha tests"
   },
-  "engines": {
-    "node": "8.11.2",
-    "yarn": "^1.13.0"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/analytics-ufcg/dc-auth.git"

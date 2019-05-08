@@ -4,8 +4,8 @@ WORKDIR /app
 
 COPY package* ./
 
-RUN npm install
+RUN yarn install
 
 EXPOSE 5000
 
-CMD npm run server
+CMD yarn run server
