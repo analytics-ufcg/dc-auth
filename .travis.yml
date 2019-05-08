@@ -15,12 +15,13 @@ jobs:
   include:
     - stage: lint
       script:
-        # Run linter
+        - cd client
         - yarn run lint
     - stage: test
       script:
-        # Run tests
+        - cd client
         - yarn run test
     - stage: build
       script:
+        - cd client
         - yarn run build
