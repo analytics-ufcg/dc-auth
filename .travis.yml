@@ -6,6 +6,7 @@ env:
   - WEBPACK_VERSION= # Current, from package.json
   - WEBPACK_VERSION=4
 install:
+  - cd client
   - yarn install
 stages:
   - lint
