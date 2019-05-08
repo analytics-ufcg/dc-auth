@@ -10,7 +10,6 @@ install:
   - yarn install
 stages:
   - lint
-  - test
   - build
 jobs:
   include:
@@ -18,11 +17,9 @@ jobs:
       script:
         - cd client
         - yarn run lint
-    - stage: test
-      script:
-        - cd client
-        - yarn run test
+        - cd ..
     - stage: build
       script:
         - cd client
         - yarn run build
+        - cd ..
