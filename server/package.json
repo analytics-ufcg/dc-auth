@@ -13,8 +13,7 @@
     "test": "mocha tests"
   },
   "engines": {
-    "node": "8.11.2",
-    "yarn": "^1.13.0"
+    "node": "8.11.4"
   },
   "repository": {
     "type": "git",

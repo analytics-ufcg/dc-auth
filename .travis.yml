@@ -3,10 +3,11 @@ node_js:
   - "8.11.4"
   - "node"
 env:
-  - WEBPACK_VERSION= # Current, from package.json
   - WEBPACK_VERSION=4
 install:
   - cd client
+  - yarn install
+  - cd ../server
   - yarn install
   - cd ..
 stages:
@@ -18,6 +19,11 @@ jobs:
       script:
         - cd client
         - yarn run lint
+        - cd ..
+    - stage: test
+      script:
+        - cd server
+        - yarn run test
         - cd ..
     - stage: build
       script:
