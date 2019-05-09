@@ -1,0 +1,48 @@
+version: '3.5'
+
+services:
+
+  db:
+    image: postgres:11.1-alpine
+    container_name: postgres_auth
+    environment:
+      - POSTGRES_DB=dcauth
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=secret
+      - TZ=GMT
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+
+  backend:
+    build:
+      context: ./server
+    container_name: backend_auth
+    env_file:
+      - variables.env
+    volumes:
+      - ./server/routes:/app/routes
+      - ./server/config:/app/config
+      - ./server/utils:/app/utils
+      - ./server/models:/app/models
+      - ./server/server.js:/app/server.js
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./client
+    container_name: frontend_auth_dev
+    volumes:
+      - ./client/src:/app/src
+      - ./client/public:/app/public
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
