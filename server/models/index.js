@@ -6,8 +6,9 @@ const UsuarioModel = "./postgres/usuario.js";
 
 if (!global.hasOwnProperty("models")) {
   const db = require("../config/keys").postgresURI;
+  console.log(db)
   // Connect to Postgres
-  const sequelize = new Sequelize({
+  const sequelize = new Sequelize(db, {
     host: "localhost",
     dialect: "postgres",
     operatorsAliases: false,
