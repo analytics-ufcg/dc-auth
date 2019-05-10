@@ -4,7 +4,7 @@
       <div class="header">Identifique-se</div>
       <div
         class="text"
-      >Ao entrar no LEG.GO, suas preferências de temas ficarão salvas para que você possa ver notificações específicas sobre os temas escolhidos. Não guardaremos nenhuma informação sensível, apenas dados públicos (nome, e-mail e foto).</div>
+      >Ao entrar na Dado Capital, suas preferências de temas ficarão salvas para que você possa ver notificações específicas sobre os temas escolhidos. Não guardaremos nenhuma informação sensível, apenas dados públicos (nome, e-mail e foto).</div>
       <div class="social-buttons">
         <button class="btn googleBtn" @click="login('google')">Entrar com Google</button>
         <button class="btn facebookBtn" @click="login('facebook')">Entrar com Facebook</button>
@@ -28,7 +28,7 @@ export default {
 .login {
   display: flex;
   align-items: center;
-  margin: 0.5rem 1rem;
+  margin: 50px;
 }
 .social {
   margin: 2rem;
