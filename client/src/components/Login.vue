@@ -1,14 +1,13 @@
 <template>
   <div class="login">
-    <div class="social">
-      <div class="header">Identifique-se</div>
-      <div
-        class="text"
-      >Ao entrar na Dado Capital, suas preferências de temas ficarão salvas para que você possa ver notificações específicas sobre os temas escolhidos. Não guardaremos nenhuma informação sensível, apenas dados públicos (nome, e-mail e foto).</div>
-      <div class="social-buttons">
-        <button class="btn googleBtn" @click="login('google')">Entrar com Google</button>
-        <button class="btn facebookBtn" @click="login('facebook')">Entrar com Facebook</button>
-      </div>
+    <img src="@/assets/dadocapital.png"/>
+    <div class="header">Identifique-se</div>
+    <div
+      class="text"
+    >Ao entrar na Dado Capital, suas preferências de temas ficarão salvas para que você possa ver notificações específicas sobre os temas escolhidos. Não guardaremos nenhuma informação sensível, apenas dados públicos (nome, e-mail e foto).</div>
+    <div class="social-buttons">
+      <button class="btn googleBtn" @click="login('google')"> <i class="fab fa-google"></i> Entrar com Google</button>
+      <button class="btn facebookBtn" @click="login('facebook')"> <i class="fab fa-facebook-square"></i> Entrar com Facebook</button>
     </div>
   </div>
 </template>
@@ -17,9 +16,9 @@
 export default {
   name: "Login",
   methods: {
-      login(provider) {
-        console.log(`Usuário logou com ${provider}`)
-      } 
+    login(provider) {
+      console.log(`Usuário logou com ${provider}`);
+    }
   }
 };
 </script>
@@ -28,10 +27,8 @@ export default {
 .login {
   display: flex;
   align-items: center;
-  margin: 50px;
-}
-.social {
-  margin: 2rem;
+  margin: 0vw 10vw;
+  flex-direction: column;
 }
 .social-buttons {
   text-align: center;
@@ -45,9 +42,16 @@ export default {
   margin-bottom: 0.5rem;
 }
 .text {
-  margin-bottom: 1rem;
+  @media screen and (max-width: 480px) {
+    margin: 0.5rem 1rem 2rem 1rem;
+  }
+  margin: 0.5rem 10rem 2rem 10rem;
 }
 .btn {
+  @media screen and (max-width: 480px) {
+    width: 80vw;
+  }
+  width: 30vw;
   border-radius: 2px;
   font-size: 16px;
   border: 1px solid #dedfe0;
