@@ -21,21 +21,6 @@ module.exports = (sequelize, type) => {
     }
   );
 
-  usuario.associate = function (models) {
-    usuario.hasMany(models.respostau, {
-      foreignKey: "user_id",
-      as: "user_resp"
-    }),
-      usuario.hasMany(models.votacaou, {
-        foreignKey: "user_id",
-        as: "user_vot"
-      }),
-      usuario.hasMany(models.temasu, {        
-        foreignKey : "usuario_id",        
-        as : "user_temas"
-      });
-  };
-
   usuario.upsertGoogleUser = function(
     accessToken,
     refreshToken,

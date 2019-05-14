@@ -19,11 +19,6 @@ jobs:
         - cd client
         - yarn run lint
         - cd ..
-    - stage: test
-      script:
-        - cd server
-        - yarn run test
-        - cd ..
     - stage: build
       script:
         - cd client
