@@ -14,12 +14,46 @@
 </template>
 
 <script>
+import { VueAuthenticate } from "vue-authenticate";
+import axios from "axios";
+// import jwtDecode from "jwt-decode";
+
+// const TOKEN_STORAGE = "vue-authenticate.vueauth_token";
+
+const http = axios.create({});
+
+const vueAuth = new VueAuthenticate(http, {
+  tokenPath: "token",
+  providers: {
+    google: {
+      clientId: process.env.VUE_APP_GOOGLE_CLIENT_ID,
+      url: `${process.env.VUE_APP_AUTH_API_URL}/api/auth/googleCode`,
+      redirectUri: window.location.origin
+    },
+    facebook: {
+      clientId: process.env.VUE_APP_FACEBOOK_CLIENT_ID,
+      url: `${process.env.VUE_APP_AUTH_API_URL}/api/auth/facebookCode`,
+      authorizationEndpoint: "https://www.facebook.com/v2.5/dialog/oauth",
+      redirectUri: window.location.origin
+    }
+  }
+});
+
 export default {
   name: "Login",
+  data() {
+    return { authToken: "" };
+  },
   methods: {
-      login(provider) {
-        console.log(`Usuário logou com ${provider}`)
-      } 
+    login(provider) {
+      vueAuth.authenticate(provider).then(response => {
+        this.authToken = response.data.token;
+        alert("Logou! - Token: " + this.authToken);
+      });
+    }
+  },
+  mounted() {
+    console.log(process.env)
   }
 };
 </script>
