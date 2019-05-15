@@ -1,5 +1,4 @@
 build:
   docker:
-    client: client/Dockerfile.client
-  docker:
-    server: server/Dockerfile.server
+    client: client/Dockerfile
+    server: server/Dockerfile
