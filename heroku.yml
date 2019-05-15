@@ -1,0 +1,5 @@
+build:
+  docker:
+    front: client/Dockerfile
+  docker:
+    back: server/Dockerfile
