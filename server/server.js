@@ -38,7 +38,7 @@ app.use("/api/usuarios", usuarios);
 app.use("/api/auth", auth);
 
 // Set static folder
-app.use(express.static("client/build"));
+app.use(express.static("dist"));
 
 const port = process.env.PORT || 5000;
 
