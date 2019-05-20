@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "install": "cd client && yarn install && cd ../server && yarn install && cd ..",
-    "build": "cd client && yarn build && mv ./dist ../server && cd ../server && yarn run start"
+    "build": "cd client && yarn build && mv ./dist ../server && cd ../",
+    "deploy": "cd server && yarn run start"
   },
   "repository": {
     "type": "git",
