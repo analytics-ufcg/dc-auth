@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/analytics-ufcg/dc-auth/issues"
   },
+  "engines": {
+    "node": "^8.11.4",
+    "yarn": "^1.15.2"
+  },
   "homepage": "https://github.com/analytics-ufcg/dc-auth#readme"
 }
