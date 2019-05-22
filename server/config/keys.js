@@ -17,4 +17,5 @@ module.exports = {
   twitterConsumerKey: process.env.TWITTER_CONSUMER_KEY,
   twitterConsumerSecret: process.env.TWITTER_CONSUMER_SECRET,
   twitterCallbackURL: "https://localhost:5000/api/auth/twitter/callback"
+
 };
