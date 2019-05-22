@@ -40,7 +40,6 @@ router.post(
     if (!req.user) {
       return res.send(401, "User Not Authenticated");
     }
-    console.log(req.user)
     req.auth = {
       id: req.user.provider_id,
       firstName: req.user.first_name,
@@ -110,8 +109,7 @@ router.post("/googleCode", (req, res, next) => {
   
   // Step 1. Exchange authorization code for access token.
   request.post(accessTokenUrl, { json: true, form: params }, (err, response, token) => {
-    const accessToken = token.access_token;    
-    console.log(accessToken)
+    const accessToken = token.access_token;
     const peopleApiUrl = 'https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=' + accessToken;    
 
     // Step 2. Retrieve profile information about the current user.

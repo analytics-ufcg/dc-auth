@@ -30,14 +30,12 @@ if (!global.hasOwnProperty("models")) {
   };
 
   Object.keys(global.models).forEach(modelName => {
-    console.log(modelName);
     if (global.models[modelName].associate) {
       global.models[modelName].associate(global.models);
     }
   });
   
   sequelize.sync({ force: false }).then(() => {
-    console.log("BD sincronizado ");
   });
 }
 module.exports = global.models;
