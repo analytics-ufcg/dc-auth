@@ -1,7 +1,7 @@
 module.exports = {
   mongoURI: process.env.MONGODB_URI,
   secretOrKey: process.env.SECRET_OR_KEY,
-  postgresURI: process.env.POSTGRESURI,
+  postgresURI: process.env.DATABASE_URL,
 
   facebookAppID: process.env.FACEBOOK_APP_ID,
   facebookAppSecret: process.env.FACEBOOK_APP_SECRET,
@@ -17,4 +17,5 @@ module.exports = {
   twitterConsumerKey: process.env.TWITTER_CONSUMER_KEY,
   twitterConsumerSecret: process.env.TWITTER_CONSUMER_SECRET,
   twitterCallbackURL: "https://localhost:5000/api/auth/twitter/callback"
+
 };
