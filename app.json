@@ -3,7 +3,9 @@
 
   ],
   "buildpacks": [
-
+    {
+      "url": "heroku/nodejs"
+    }
   ],
   "env": {
   },
@@ -11,6 +13,7 @@
   },
   "name": "dc-auth",
   "scripts": {
+
   },
-  "stack": "container"
+  "stack": "heroku-18"
 }

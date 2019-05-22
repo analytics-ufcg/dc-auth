@@ -6,7 +6,7 @@ const UsuarioModel = "./postgres/usuario.js";
 
 if (!global.hasOwnProperty("models")) {
   const db = require("../config/keys").postgresURI;
-  console.log(db)
+
   // Connect to Postgres
   const sequelize = new Sequelize(db, {
     host: "localhost",
@@ -30,14 +30,12 @@ if (!global.hasOwnProperty("models")) {
   };
 
   Object.keys(global.models).forEach(modelName => {
-    console.log(modelName);
     if (global.models[modelName].associate) {
       global.models[modelName].associate(global.models);
     }
   });
   
   sequelize.sync({ force: false }).then(() => {
-    console.log("BD sincronizado");
   });
 }
 module.exports = global.models;

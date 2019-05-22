@@ -1,0 +1,25 @@
+{
+  "name": "dc-auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "cd client && yarn install && cd ../server && yarn install && cd ..",
+    "build": "cd client && yarn build && mv ./dist ../server && cd ../",
+    "start": "cd server && yarn run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/analytics-ufcg/dc-auth.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/analytics-ufcg/dc-auth/issues"
+  },
+  "engines": {
+    "node": "^8.11.4",
+    "yarn": "^1.15.2"
+  },
+  "homepage": "https://github.com/analytics-ufcg/dc-auth#readme"
+}
