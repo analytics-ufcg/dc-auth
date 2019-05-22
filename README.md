@@ -66,7 +66,7 @@ docker kill <container_id>
 É necessário exportar as variáveis de ambiente para que o projeto possa ser executado. Essa é a lista de variáveis necessárias:
 
 - SECRET_OR_KEY
-- POSTGRESURI
+- DATABASE_URL
 - FACEBOOK_APP_ID
 - FACEBOOK_APP_SECRET
 - GOOGLE_APP_ID
@@ -78,7 +78,7 @@ Para exportar use, como exemplo, o comando abaixo (no terminal):
 export SECRET_OR_KEY="umsupersegredo"
 ```
 
-Obs: a variável POSTGRESURI deve ter o seguinte formato "postgres://<username>:<password>@localhost:5432/dc-auth"
+Obs: a variável DATABASE_URL deve ter o seguinte formato "postgres://<username>:<password>@localhost:5432/dc-auth"
 
 ## Instalação de dependências
 
