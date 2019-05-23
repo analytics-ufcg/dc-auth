@@ -96,22 +96,20 @@ router.get("/usingFacebookCode", (req, res) => {
   );
 });
 
-router.post("/googleCode", (req, res, next) => {  
-  
+router.post("/googleCode", (req, res, next) => {
   const accessTokenUrl = 'https://accounts.google.com/o/oauth2/token';  
 
   const params = {
     code: req.body.code,
     client_id: req.body.clientId,
     client_secret: keys.googleAppSecret,
-    redirect_uri: 'http://localhost:8080',
+    redirect_uri: req.body.redirectUri,
     grant_type: 'authorization_code'
   };
   
   // Step 1. Exchange authorization code for access token.
   request.post(accessTokenUrl, { json: true, form: params }, (err, response, token) => {
-    const accessToken = token.access_token;    
-
+    const accessToken = token.access_token;
     const peopleApiUrl = 'https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=' + accessToken;    
 
     // Step 2. Retrieve profile information about the current user.
@@ -178,8 +176,7 @@ router.post("/facebookCode", (req, res, next) => {
 
   request.get({url: accessTokenUrl, qs: params}, (err, response, token) => {
     if (err) console.log(err); 
-    let accessToken = JSON.parse(token).access_token;   
-        
+    let accessToken = JSON.parse(token).access_token;      
     const peopleApiUrl = "https://graph.facebook.com/me?fields=id,name,email,first_name,picture{url}&access_token=" + accessToken 
     
     request.get({url: peopleApiUrl}, (err, response, profileFacebook) => {
@@ -192,7 +189,8 @@ router.post("/facebookCode", (req, res, next) => {
           provider: "facebook",
           provider_id: profile.id
         }
-      }).then((user, err) => {        
+      }).then((user, err) => {      
+         
         if (!user){
           const newUser = new Usuario({
             first_name: profile.first_name,

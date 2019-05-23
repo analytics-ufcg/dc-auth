@@ -29,9 +29,6 @@
 <script>
 import { VueAuthenticate } from "vue-authenticate";
 import axios from "axios";
-// import jwtDecode from "jwt-decode";
-
-// const TOKEN_STORAGE = "vue-authenticate.vueauth_token";
 
 const http = axios.create({});
 
@@ -61,12 +58,11 @@ export default {
     login(provider) {
       vueAuth.authenticate(provider).then(response => {
         this.authToken = response.data.token;
-        alert("Logou! - Token: " + this.authToken);
+        alert("Logou! - Token: " + this.authToken)
       });
     }
   },
   mounted() {
-    console.log(process.env)
   }
 };
 </script>
