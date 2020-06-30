@@ -30,7 +30,7 @@
     "cors": "^2.8.4",
     "expand-range": "^2.0.2",
     "express": "^4.16.3",
-    "express-jwt": "^5.3.1",
+    "express-jwt": "^6.0.0",
     "fbgraph": "^1.4.4",
     "heroku-logger": "^0.3.1",
     "immer": "^1.8.2",
