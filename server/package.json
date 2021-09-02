@@ -33,7 +33,7 @@
     "express-jwt": "^5.3.1",
     "fbgraph": "^1.4.4",
     "heroku-logger": "^0.3.1",
-    "immer": "^1.8.2",
+    "immer": "^9.0.6",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.2.10",
     "mysql2": "^1.6.4",
