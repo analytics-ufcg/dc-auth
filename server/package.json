@@ -35,7 +35,7 @@
     "heroku-logger": "^0.3.1",
     "immer": "^1.8.2",
     "jsonwebtoken": "^8.3.0",
-    "mongoose": "^5.2.10",
+    "mongoose": "^5.7.5",
     "mysql2": "^1.6.4",
     "passport": "^0.4.0",
     "passport-facebook-token": "^3.3.0",
