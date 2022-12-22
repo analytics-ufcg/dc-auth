@@ -34,7 +34,7 @@
     "fbgraph": "^1.4.4",
     "heroku-logger": "^0.3.1",
     "immer": "^1.8.2",
-    "jsonwebtoken": "^8.3.0",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.2.10",
     "mysql2": "^1.6.4",
     "passport": "^0.4.0",
